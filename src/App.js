@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Home from "./pages/home/Home";
+import Marketplace from "./pages/marketplace/Marketplace";
+import Rankings from "./pages/rankings/Rankings";
+import Wallet from "./pages/wallet/Wallet";
+import User from "./pages/user/User";
+import ArtistPage from "./pages/artistPage/ArtistPage";
+import NFTPage from "./pages/nftPage/NFTPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/marketplace" element={<Marketplace />} />
+        <Route path="/rankings" element={<Rankings />} />
+        <Route path="/wallet" element={<Wallet />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/artist-page" element={<ArtistPage />} />
+        <Route path="/nft-page" element={<NFTPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
